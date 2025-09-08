@@ -56,7 +56,15 @@ public class SistemaGestion {
                     
                     System.out.println("Ingrese fecha de nacimiento: ");
                     
-                    System.out.println("Cliente registrado con exito!");
+                    System.out.println("Cliente registrado con éxito!");
+                    
+                case 2:
+                    System.out.println("-- INGRESAR VENDEDOR --");
+                    System.out.println("Ingrese RUT de vendedor: ");
+                    System.out.println("Ingrese numero de vendedor: ");
+                    System.out.println("Ingrese nombre de vendedor: ");
+                    System.out.println("Ingrese la fecha de ingreso del vendedor: ");
+                    System.out.println("Ingrese la region en la que trabaja el vendedor:");
                     
             }
             
