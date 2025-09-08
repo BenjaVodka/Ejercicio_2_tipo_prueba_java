@@ -66,6 +66,30 @@ public class SistemaGestion {
                     System.out.println("Ingrese la fecha de ingreso del vendedor: ");
                     System.out.println("Ingrese la region en la que trabaja el vendedor:");
                     
+                case 3:
+                    
+                    System.out.println("-- INGRESAR REGION --");
+                    System.out.println("Ingrese el numero unico de la region: ");
+                    System.out.println("Ingrese su nombre: ");
+                    System.out.println("Ingrese la ciudad principal: ");
+                   
+                    
+                case 4:
+                    System.out.println("-- INGRESAR PRODUCTO --");
+                    System.out.println("1.- Ingrese el codigo unico: ");
+                    System.out.println("2.- Ingrese el nombre: ");
+                    System.out.println("3.- Ingrese el tipo de producto: ");
+                    System.out.println("4.- Ingrese precio unitario: ");
+                    
+                case 5:
+                    
+                    System.out.println("-- GENERANDO INFORMACION PEDIDO --");
+                    System.out.println("Cliente: ");
+                    System.out.println("Producto: ");
+                    System.out.println("Vendedor: ");
+                    System.out.println("Cantidad solicitada: ");
+                    System.out.println("Fecha de pedido: ");
+                    
             }
             
             
