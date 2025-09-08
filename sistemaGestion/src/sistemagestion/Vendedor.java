@@ -4,6 +4,8 @@
  */
 package sistemagestion;
 
+import java.util.Date;
+
 /**
  *
  * @author benjamin
