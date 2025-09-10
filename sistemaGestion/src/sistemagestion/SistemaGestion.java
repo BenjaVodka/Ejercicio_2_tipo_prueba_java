@@ -76,11 +76,14 @@ public class SistemaGestion {
                         System.out.println("Ingrese nombre del cliente: ");
                         lectura = leer.next();
                         
-                        if(lectura.equals("")){
+                        if(cliente1.comprobarNombre(lectura)){
                             System.out.println("Error: el nombre no puede estar vacio");
                             
+                        }else{
+                            System.out.println("Nombre ingresado con exito!");
+                            
                         }
-                    }while (lectura.equals(""));
+                    }while (cliente1.comprobarNombre(lectura));
                     
                     cliente1.setNombre(lectura);
                     
@@ -189,14 +192,14 @@ public class SistemaGestion {
                     
                     System.out.println("==== PEDIDO =====");
                     System.out.println("Codigo producto: "+producto1.getCodigoUnico());
-                    System.out.println("Vendedor: "+producto1.getTipo());
-                    System.out.println("Vendedor: "+producto1.getPrecioUnitario());
-                    System.out.println("Producto: "+vendedor1.getNombre());
-                    System.out.println("Vendedor: "+cliente1.getNombre());
-                    System.out.println("Vendedor: "+cliente1.getEdad());
-                    System.out.println("Vendedor: "+pedido1.getCantidadSolicitada());
-                    System.out.println("Vendedor: "+pedido1.totalBruto(producto1));
-                    System.out.println("Vendedor: "+pedido1.validarPedido(cliente1));
+                    System.out.println("Tipo: "+producto1.getTipo());
+                    System.out.println("Precio Unitario: "+producto1.getPrecioUnitario());
+                    System.out.println("Vendedor: "+vendedor1.getNombre());
+                    System.out.println("Cliente: "+cliente1.getNombre());
+                    System.out.println("Edad: "+cliente1.getEdad());
+                    System.out.println("Cantidad Solicitada: "+pedido1.getCantidadSolicitada());
+                    System.out.println("Total Bruto: "+pedido1.totalBruto(producto1));
+                    System.out.println("Pedido valido: "+pedido1.validarPedido(cliente1));
                     System.out.println("Descuento: "+pedido1.totalNeto(producto1));
                     System.out.println("Estado: "+pedido1.validarPedido(cliente1));
                     

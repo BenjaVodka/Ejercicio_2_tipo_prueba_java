@@ -44,11 +44,15 @@ public class Cliente {
         
         if(nombre.isEmpty()){
             System.out.println("El nombre no debe estar vacio!");
-        }else{
-            System.out.println("Nombre ingresado con exito");
             
-        }
-        return false;
+        }else{
+            
+        }return false;
+            
+            
+       
+        
+        
     }
 
     public String getRut() {

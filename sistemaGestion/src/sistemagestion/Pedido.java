@@ -64,14 +64,16 @@ public class Pedido {
     
     public boolean validarPedido(Cliente cliente){
         
-        if (cliente.comprobarEdad(cliente.getEdad())){
-            System.out.println("!");
+        if (cliente.comprobarEdad(cliente.getEdad()) && cliente.comprobarNombre(cliente.getNombre())){
+            System.out.println("");
+            return true;
+            
             
         }else{
             System.out.println("");
-        }
+        }return false;
         
-        return false;
+        
         
         
     }
