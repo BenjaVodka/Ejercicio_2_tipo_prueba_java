@@ -4,6 +4,9 @@
  */
 package sistemagestion;
 
+import java.time.LocalDate;
+
+
 /**
  *
  * @author benjamin
@@ -14,7 +17,7 @@ public class Cliente {
     private String rut;
     private String nombre;
     private int edad;
-    private String fechaNacimiento;
+    private LocalDate fechaNacimiento;
     
     
     
@@ -22,7 +25,7 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String rut, String nombre, int edad, String fechaNacimiento) {
+    public Cliente(String rut, String nombre, int edad, LocalDate fechaNacimiento) {
         this.rut = rut;
         this.nombre = nombre;
         this.edad = edad;
@@ -79,11 +82,11 @@ public class Cliente {
         this.edad = edad;
     }
 
-    public String getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
     

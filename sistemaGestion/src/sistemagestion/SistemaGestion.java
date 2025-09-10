@@ -5,6 +5,9 @@
 package sistemagestion;
 
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 /**
  *
@@ -24,6 +27,7 @@ public class SistemaGestion {
         int opcion;
         String producto;
         double precio;
+        boolean fechaValida = false;
         
         
         //Cliente(String rut, String nombre, int edad, String fechaNacimiento)
@@ -96,14 +100,27 @@ public class SistemaGestion {
                         break;
                     }
                    
-                    
-                    
-                    System.out.println("Ingrese fecha de nacimiento (AAAA-MM--DD): ");
+                    do {
+                        
+                         System.out.println("Ingrese fecha de nacimiento (AAAA-MM-DD): ");
                     lectura = leer.next();
-                    cliente1.setFechaNacimiento(lectura);
+
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                    try {
+                        LocalDate fecha = LocalDate.parse(lectura, formatter);
+                        cliente1.setFechaNacimiento(fecha);
+                        System.out.println("Cliente registrado con éxito!");
+                        fechaValida = true;
+                        // ahora el setter recibe un LocalDate
+                        } catch (DateTimeParseException e) {
+                        System.out.println("Formato de fecha incorrecto. Intente nuevamente.");
+                        }
                     
-                    System.out.println("Cliente registrado con éxito!");
-                    break;
+                    
+                    
+                    }while (fechaValida != true);
+                    
+                   
                 case 2:
                     
                     System.out.println("-- INGRESO DE VENDEDOR --");
