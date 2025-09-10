@@ -4,31 +4,30 @@
  */
 package sistemagestion;
 
-import java.util.Date;
-
 /**
  *
  * @author benjamin
  */
 public class Vendedor {
     
-    
     private String rut;
     private int nroVendedor;
     private String nombre;
-    private Date fechaIngreso;
-    private String region;
+    private String fechaIngreso;
+    private String regionTrabaja;
 
     public Vendedor() {
     }
 
-    public Vendedor(String rut, int nroVendedor, String nombre, Date fechaIngreso, String region) {
+    public Vendedor(String rut, int nroVendedor, String nombre, String fechaIngreso, String regionTrabaja) {
         this.rut = rut;
         this.nroVendedor = nroVendedor;
         this.nombre = nombre;
         this.fechaIngreso = fechaIngreso;
-        this.region = region;
+        this.regionTrabaja = regionTrabaja;
     }
+    
+  
 
     public String getRut() {
         return rut;
@@ -54,22 +53,21 @@ public class Vendedor {
         this.nombre = nombre;
     }
 
-    public Date getFechaIngreso() {
+    public String getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(String fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public String getRegion() {
-        return region;
+    public String getRegionTrabaja() {
+        return regionTrabaja;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    public void setRegionTrabaja(String regionTrabaja) {
+        this.regionTrabaja = regionTrabaja;
     }
-    
     
     
     
