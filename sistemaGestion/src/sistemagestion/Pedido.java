@@ -27,56 +27,44 @@ public class Pedido {
         this.fechaPedido = fechaPedido;
     }
     
-        public double totalBruto(Producto precio){
-        
-        
+      public double totalBruto(Producto precio){
         double total = 0;
         
         
         total = cantidadSolicitada * precio.getPrecioUnitario();
-        System.out.println("Total bruto: "+total);
-        return 0;
-        
-        
+        System.out.println("Total bruto: " + total);
+        return total; 
     }
-    
+
     public double totalNeto(Producto producto){
+        double totalBruto = totalBruto(producto);
+        double descuento = 0;
         
-       double totalBruto = totalBruto(producto);
-       double descuento = 0;
-       
-        if (totalBruto > 50000) {
-            descuento = 0.10; // 10%
-        } else if (totalBruto > 100000) {
-            descuento = 0.20; // 20%
+        
+        if (totalBruto > 100000) {
+            descuento = 0.20; 
+        } else if (totalBruto > 50000) {
+            descuento = 0.10; 
         }
 
+        
         double totalConDescuento = totalBruto - (totalBruto * descuento);
         System.out.println("Total neto (con descuento): " + totalConDescuento);
         return totalConDescuento;
-       
-        
-        
-        
-  
-       
     }
-    
+
     public boolean validarPedido(Cliente cliente){
         
-        if (cliente.comprobarEdad(cliente.getEdad()) && cliente.comprobarNombre(cliente.getNombre())){
-            System.out.println("");
+        if (cliente.comprobarEdad(cliente.getEdad()) && cliente.comprobarNombre(cliente.getNombre())) {
+            System.out.println("Pedido válido.");
             return true;
-            
-            
-        }else{
-            System.out.println("");
-        }return false;
-        
-        
-        
-        
+        } else {
+            System.out.println("Pedido inválido.");
+            return false;
+        }
     }
+    
+
     
     public String getRegistrarCliente() {
         return registrarCliente;

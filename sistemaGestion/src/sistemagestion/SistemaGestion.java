@@ -189,6 +189,7 @@ public class SistemaGestion {
 
                     vendedor1.setRegionTrabaja(lectura);
                     System.out.println("Vendedor ingresado con éxito!");
+                    break;
 
                 case 3:
                     
