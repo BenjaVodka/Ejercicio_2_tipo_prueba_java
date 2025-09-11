@@ -33,30 +33,24 @@ public class Cliente {
     }
     
     public boolean comprobarEdad(int edad){
-        
-        if (edad >= 18 && edad < 100){
-            System.out.println("");
-            return true;
-        }else{
-            System.out.println("Usted no cumple con la edad necesaria");
-            return false;
-        }
+     if (edad >= 18 && edad < 100){
+        return true;
+    }else{
+        System.out.println("Usted no cumple con la edad necesaria");
+        return false;
     }
+}
+
     
-    public boolean comprobarNombre(String nombre){
-        
-        if(nombre.isEmpty()){
-            System.out.println("El nombre no debe estar vacio!");
-            
-        }else{
-            
-        }return false;
-            
-            
-       
-        
-        
+   public boolean comprobarNombre(String nombre){
+    if(nombre == null || nombre.isBlank()){  // chequea null y vacío
+        System.out.println("El nombre no debe estar vacío!");
+        return false;
+    }else{
+        return true;
     }
+}
+
 
     public String getRut() {
         return rut;

@@ -32,38 +32,27 @@ public class Pedido {
         
         
         total = cantidadSolicitada * precio.getPrecioUnitario();
-        System.out.println(total);
+        
         return total; 
     }
 
     public double totalNeto(Producto producto){
         double totalBruto = totalBruto(producto);
         double descuento = 0;
-        
-        
-        if (totalBruto > 100000) {
-            descuento = 0.20; 
-        } else if (totalBruto > 50000) {
-            descuento = 0.10; 
-        }else{
-            System.out.println("No hay descuento disponible para usted");
-        }
 
-        
-        double totalConDescuento = totalBruto - (totalBruto * descuento);
-        System.out.println("Total neto (con descuento): " + totalConDescuento);
-        return totalConDescuento;
+        if (totalBruto > 100000) {
+            descuento = 0.20;
+    } else if (totalBruto > 50000) {
+            descuento = 0.10;
     }
+
+    return totalBruto - (totalBruto * descuento);
+}
+
 
     public boolean validarPedido(Cliente cliente){
         
-        if (cliente.comprobarEdad(cliente.getEdad()) && cliente.comprobarNombre(cliente.getNombre())) {
-            System.out.println("Pedido válido.");
-            return true;
-        } else {
-            System.out.println("Pedido inválido.");
-            return false;
-        }
+        return cliente.comprobarEdad(cliente.getEdad()) && cliente.comprobarNombre(cliente.getNombre());
     }
     
 

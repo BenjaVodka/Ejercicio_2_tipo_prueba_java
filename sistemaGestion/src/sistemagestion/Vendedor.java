@@ -32,12 +32,12 @@ public class Vendedor {
     
       public boolean comprobarNombre(String nombre){
         
-        if(nombre.isEmpty()){
+        if(nombre == null || nombre.isBlank()){
             System.out.println("El nombre no debe estar vacio!");
-            
+            return false;
         }else{
             
-        }return false;
+        }return true;
             
             
        

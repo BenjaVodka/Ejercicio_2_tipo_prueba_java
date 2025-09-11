@@ -78,19 +78,18 @@ public class SistemaGestion {
                     cliente1.setRut(lectura);
               
                    
-                    
-                    do{
-                        System.out.println("Ingrese nombre del cliente: ");
-                        lectura = leer.next();
-                        
-                        if(cliente1.comprobarNombre(lectura)){
-                            System.out.println("Error: el nombre no puede estar vacio");
-                            
-                        }else{
-                            System.out.println("Nombre ingresado con exito!");
-                            
-                        }
-                    }while (cliente1.comprobarNombre(lectura));
+                    do {
+                    System.out.println("Ingrese nombre del cliente: ");
+                    lectura = leer.next();
+    
+                    if(!cliente1.comprobarNombre(lectura)){   // nombre inválido
+                    System.out.println("Error: el nombre no puede estar vacío");
+                    } else {
+                    System.out.println("Nombre ingresado con éxito!");
+                    }
+    
+                    } while (!cliente1.comprobarNombre(lectura)); // repetir si el nombre es inválido
+
                     
                     cliente1.setNombre(lectura);
                     
@@ -102,10 +101,12 @@ public class SistemaGestion {
                     }else{
                         break;
                     }
+                    
+                    cliente1.setEdad(numero);
                    
                     do {
                         
-                    cliente1.setEdad(numero);    
+                        
                     System.out.println("Ingrese fecha de nacimiento (AAAA-MM-DD): ");
                     lectura = leer.next();
 
@@ -143,12 +144,14 @@ public class SistemaGestion {
                     lectura = leer.next();
                     
                     do{
-                        if(vendedor1.comprobarNombre(lectura)){
+                        if(!vendedor1.comprobarNombre(lectura)){
                             System.out.println("El nombre no debe estar vacio!");
                             
+                        }else{
+                            System.out.println("Nombre ingresado con exito!");
                         }
                         
-                    }while (vendedor1.comprobarNombre(lectura));
+                    }while (!vendedor1.comprobarNombre(lectura));
                     
                     vendedor1.setNombre(lectura);
                     
@@ -162,8 +165,9 @@ public class SistemaGestion {
 
                     if (fechaIngreso.isAfter(fechaMaxima)) {
                     System.out.println("Error: la fecha de ingreso no puede ser posterior a " + fechaMaxima);
-                    } else {
                     fechaValida = true; // fecha correcta
+                    } else {
+                    fechaValida = false;
                     }
                     } catch (DateTimeParseException e) {
                     System.out.println("Formato de fecha incorrecto. Intente nuevamente.");
@@ -234,20 +238,25 @@ public class SistemaGestion {
                     
                     
                 case 4:
-                    
                     System.out.println("==== PEDIDO =====");
-                    System.out.println("Codigo producto: "+producto1.getCodigoUnico());
-                    System.out.println("Tipo: "+producto1.getTipo());
-                    System.out.println("Precio Unitario: "+producto1.getPrecioUnitario());
-                    System.out.println("Vendedor: "+vendedor1.getNombre());
-                    System.out.println("Cliente: "+cliente1.getNombre());
-                    System.out.println("Edad: "+cliente1.getEdad());
-                    System.out.println("Cantidad Solicitada: "+pedido1.getCantidadSolicitada());
-                    System.out.println("Total Bruto: "+pedido1.totalBruto(producto1));
-                    System.out.println("Pedido valido: "+pedido1.validarPedido(cliente1));
-                    System.out.println("Descuento: "+pedido1.totalNeto(producto1));
-                    
+                    System.out.println("Código producto: " + producto1.getCodigoUnico());
+                    System.out.println("Tipo: " + producto1.getTipo());
+                    System.out.println("Precio Unitario: " + producto1.getPrecioUnitario());
+                    System.out.println("Vendedor: " + vendedor1.getNombre());
+                    System.out.println("Cliente: " + cliente1.getNombre());
+                    System.out.println("Edad: " + cliente1.getEdad());
+                    System.out.println("Cantidad Solicitada: " + pedido1.getCantidadSolicitada());
+
+                    double bruto = pedido1.totalBruto(producto1);
+                    System.out.println("Total Bruto: " + bruto);
+
+                    boolean valido = pedido1.validarPedido(cliente1);
+                    System.out.println("Pedido válido: " + valido);
+
+                    double neto = pedido1.totalNeto(producto1);
+                    System.out.println("Total Neto (con descuento): " + neto);
                     break;
+
                     
                 case 5:
                     System.out.println("Saliendo del sistema...");
