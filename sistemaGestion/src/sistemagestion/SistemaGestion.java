@@ -30,6 +30,7 @@ public class SistemaGestion {
         LocalDate fechaMaxima = LocalDate.parse("2025-09-05");
         LocalDate fechaIngreso = null;
         boolean fechaValida = false;
+      
         
         
         //Cliente(String rut, String nombre, int edad, String fechaNacimiento)
@@ -175,12 +176,20 @@ public class SistemaGestion {
 
                     
                     
-                    System.out.println("Ingrese la region en la que trabaja: ");
-                    lectura = leer.next();
-                    vendedor1.setRegionTrabaja(lectura);
-                    System.out.println("Vendedor ingresado con exito!");
-                    break;
                     
+                   do {
+                    System.out.println("Ingrese la región en la que trabaja: ");
+                    lectura = leer.next().toLowerCase();
+
+                    if (!lectura.equals(region1.getNombre().toLowerCase())) {
+                    System.out.println("Error: la región debe ser " + region1.getNombre());
+                    }
+
+                    } while (!lectura.equals(region1.getNombre().toLowerCase()));
+
+                    vendedor1.setRegionTrabaja(lectura);
+                    System.out.println("Vendedor ingresado con éxito!");
+
                 case 3:
                     
                     System.out.println("Ingrese el codigo unico del producto: ");

@@ -17,6 +17,9 @@ public class Region {
 
     public Region() {
     }
+    
+    
+ 
 
     public Region(int nroUnico, String nombre, String ciudadPrincipal) {
         this.nroUnico = nroUnico;
