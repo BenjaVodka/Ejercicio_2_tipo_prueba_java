@@ -246,7 +246,8 @@ public class SistemaGestion {
                     System.out.println("Total Bruto: "+pedido1.totalBruto(producto1));
                     System.out.println("Pedido valido: "+pedido1.validarPedido(cliente1));
                     System.out.println("Descuento: "+pedido1.totalNeto(producto1));
-                    System.out.println("Estado: "+pedido1.validarPedido(cliente1));
+                    
+                    break;
                     
                 case 5:
                     System.out.println("Saliendo del sistema...");

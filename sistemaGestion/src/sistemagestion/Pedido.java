@@ -32,7 +32,7 @@ public class Pedido {
         
         
         total = cantidadSolicitada * precio.getPrecioUnitario();
-        System.out.println("Total bruto: " + total);
+        System.out.println(total);
         return total; 
     }
 
@@ -45,6 +45,8 @@ public class Pedido {
             descuento = 0.20; 
         } else if (totalBruto > 50000) {
             descuento = 0.10; 
+        }else{
+            System.out.println("No hay descuento disponible para usted");
         }
 
         
