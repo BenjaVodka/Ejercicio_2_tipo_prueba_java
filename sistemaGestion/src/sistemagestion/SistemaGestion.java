@@ -27,6 +27,8 @@ public class SistemaGestion {
         int opcion;
         String producto;
         double precio;
+        LocalDate fechaMaxima = LocalDate.parse("2025-09-05");
+        LocalDate fechaIngreso = null;
         boolean fechaValida = false;
         
         
@@ -95,14 +97,15 @@ public class SistemaGestion {
                     numero = leer.nextInt();
                     
                     if (cliente1.comprobarEdad(numero)){
-                        cliente1.setEdad(numero);
+                        
                     }else{
                         break;
                     }
                    
                     do {
                         
-                         System.out.println("Ingrese fecha de nacimiento (AAAA-MM-DD): ");
+                    cliente1.setEdad(numero);    
+                    System.out.println("Ingrese fecha de nacimiento (AAAA-MM-DD): ");
                     lectura = leer.next();
 
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -119,6 +122,7 @@ public class SistemaGestion {
                     
                     
                     }while (fechaValida != true);
+                    break;
                     
                    
                 case 2:
@@ -138,33 +142,44 @@ public class SistemaGestion {
                     lectura = leer.next();
                     
                     do{
-                        if(lectura.equals("")){
+                        if(vendedor1.comprobarNombre(lectura)){
                             System.out.println("El nombre no debe estar vacio!");
                             
                         }
                         
-                    }while (lectura.equals(""));
+                    }while (vendedor1.comprobarNombre(lectura));
                     
                     vendedor1.setNombre(lectura);
                     
-                    String fecha_maxima ="2025-09-05";
-                    do{
-                       
-                        System.out.println("Ingrese fecha de ingreso(AAAA-MM-DD): ");
-                        lectura = leer.next();
-                        if (lectura.compareTo(fecha_maxima) > 0){
-                          System.out.println("Error: la fecha de ingreso no puede ser posterior a "+fecha_maxima);
-                          
-                        }
-                        
-                    }while (lectura.compareTo(fecha_maxima) > 0);
-                    
-                    vendedor1.setFechaIngreso(lectura);
+                  do {
+                    System.out.println("Ingrese fecha de ingreso (AAAA-MM-DD): ");
+                    lectura = leer.next();
+
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                    try {
+                    fechaIngreso = LocalDate.parse(lectura, formatter);
+
+                    if (fechaIngreso.isAfter(fechaMaxima)) {
+                    System.out.println("Error: la fecha de ingreso no puede ser posterior a " + fechaMaxima);
+                    } else {
+                    fechaValida = true; // fecha correcta
+                    }
+                    } catch (DateTimeParseException e) {
+                    System.out.println("Formato de fecha incorrecto. Intente nuevamente.");
+                    }
+
+                    } while (!fechaValida);
+
+                    vendedor1.setFechaIngreso(fechaIngreso);
+                    System.out.println("Fecha de ingreso registrada correctamente: " + fechaIngreso);
+
                     
                     
                     System.out.println("Ingrese la region en la que trabaja: ");
                     lectura = leer.next();
                     vendedor1.setRegionTrabaja(lectura);
+                    System.out.println("Vendedor ingresado con exito!");
+                    break;
                     
                 case 3:
                     
@@ -203,6 +218,8 @@ public class SistemaGestion {
                     pedido1.setCantidadSolicitada(numero);
                     pedido1.totalBruto(producto1);
                     
+                    break;
+                    
                     
                     
                 case 4:
@@ -229,6 +246,7 @@ public class SistemaGestion {
             }
             
         }while(opcion != 5);
+        leer.close();
         
         
         

@@ -4,6 +4,8 @@
  */
 package sistemagestion;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author benjamin
@@ -13,13 +15,13 @@ public class Vendedor {
     private String rut;
     private int nroVendedor;
     private String nombre;
-    private String fechaIngreso;
+    private LocalDate fechaIngreso;
     private String regionTrabaja;
 
     public Vendedor() {
     }
 
-    public Vendedor(String rut, int nroVendedor, String nombre, String fechaIngreso, String regionTrabaja) {
+    public Vendedor(String rut, int nroVendedor, String nombre, LocalDate fechaIngreso, String regionTrabaja) {
         this.rut = rut;
         this.nroVendedor = nroVendedor;
         this.nombre = nombre;
@@ -27,6 +29,21 @@ public class Vendedor {
         this.regionTrabaja = regionTrabaja;
     }
     
+    
+      public boolean comprobarNombre(String nombre){
+        
+        if(nombre.isEmpty()){
+            System.out.println("El nombre no debe estar vacio!");
+            
+        }else{
+            
+        }return false;
+            
+            
+       
+        
+        
+    }
   
 
     public String getRut() {
@@ -53,11 +70,11 @@ public class Vendedor {
         this.nombre = nombre;
     }
 
-    public String getFechaIngreso() {
+    public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(String fechaIngreso) {
+    public void setFechaIngreso(LocalDate fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
