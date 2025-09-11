@@ -156,30 +156,29 @@ public class SistemaGestion {
                     vendedor1.setNombre(lectura);
                     
                   do {
-                    System.out.println("Ingrese fecha de ingreso (AAAA-MM-DD): ");
-                    lectura = leer.next();
+                     System.out.println("Ingrese fecha de ingreso (AAAA-MM-DD): ");
+                     lectura = leer.next(); 
 
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                     try {
-                    fechaIngreso = LocalDate.parse(lectura, formatter);
+                        fechaIngreso = LocalDate.parse(lectura, formatter);
 
-                    if (fechaIngreso.isAfter(fechaMaxima)) {
-                    System.out.println("Error: la fecha de ingreso no puede ser posterior a " + fechaMaxima);
-                    fechaValida = true; // fecha correcta
-                    } else {
-                    fechaValida = false;
-                    }
-                    } catch (DateTimeParseException e) {
-                    System.out.println("Formato de fecha incorrecto. Intente nuevamente.");
-                    }
+                        if (fechaIngreso.isAfter(fechaMaxima)) {
+                            System.out.println("Error: la fecha de ingreso no puede ser posterior a " + fechaMaxima);
+                            fechaValida = false; // la fecha no es válida
+                            } else {
+                            fechaValida = true;  // fecha válida
+                            }
+                            } catch (DateTimeParseException e) {
+                            System.out.println("Formato de fecha incorrecto. Intente nuevamente.");
+                            fechaValida = false;
+                             }
 
-                    } while (!fechaValida);
+                     } while (!fechaValida);
 
                     vendedor1.setFechaIngreso(fechaIngreso);
                     System.out.println("Fecha de ingreso registrada correctamente: " + fechaIngreso);
-
-                    
-                    
+        
                     
                    do {
                     System.out.println("Ingrese la región en la que trabaja: ");
