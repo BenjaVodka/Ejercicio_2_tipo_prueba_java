@@ -201,20 +201,21 @@ public class SistemaGestion {
                     producto1.setNombre(lectura);
                     
                     
-                    do{
-                        
-                      System.out.println("Ingrese el tipo (Crema/Perfume): ");
-                      producto = leer.next().toLowerCase().trim();
-                      
-                      if(producto1.productoValido(producto)){
-                          break;
-                          
-                          
-                          
-                      }else{
-                          
-                      } System.out.println("Debes ingresar un producto crema o perfume");
-                    }while(true);
+                    do {
+                    System.out.println("Ingrese el tipo (Crema/Perfume): ");
+                    producto = leer.next().toLowerCase().trim();
+
+                    if (producto.equals("crema") || producto.equals("perfume")) {
+                    System.out.println("Producto válido!");
+                    } else {
+                    System.out.println("Debes ingresar un producto válido: crema o perfume");
+                    }
+
+                    } while (!(producto.equals("crema") || producto.equals("perfume")));
+
+                    producto1.setTipo(producto);
+                    System.out.println("Producto registrado con éxito!");
+
                     
                     
                     System.out.println("Ingrese el precio unitario: ");

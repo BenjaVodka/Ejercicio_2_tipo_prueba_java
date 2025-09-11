@@ -25,6 +25,15 @@ public class Producto {
         this.tipo = tipo;
         this.precioUnitario = precioUnitario;
     }
+    
+    public boolean validarProducto(){
+        
+        if(nombre.equals("crema") || nombre.equals("perfume")){
+            return true;
+        }else{
+           
+        }return false;
+    }
 
     public String getCodigoUnico() {
         return codigoUnico;
