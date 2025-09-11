@@ -261,7 +261,8 @@ public class SistemaGestion {
                     System.out.println("Saliendo del sistema...");
                     break;
                 default:   
-                    System.out.println("Seleccione una opcion válida");     
+                    System.out.println("Seleccione una opcion válida"); 
+                    break;
                 
             }
             
