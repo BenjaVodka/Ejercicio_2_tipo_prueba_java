@@ -206,13 +206,13 @@ public class SistemaGestion {
                     
                     
                     do {
-                    System.out.println("Ingrese el tipo (Crema/Perfume): ");
+                    System.out.println("Ingrese el tipo (Maleta/Mochila/Bolso): ");
                     producto = leer.next().toLowerCase().trim();
 
-                    if (producto.equals("crema") || producto.equals("perfume")) {
+                    if (producto.equals("maleta") || producto.equals("mochila") || (producto.equals("bolso") {
                     System.out.println("Producto válido!");
                     } else {
-                    System.out.println("Debes ingresar un producto válido: crema o perfume");
+                    System.out.println("Debes ingresar un producto válido: (Maleta/Mochila/Bolso)");
                     }
 
                     } while (!(producto.equals("crema") || producto.equals("perfume")));
