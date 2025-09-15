@@ -15,7 +15,7 @@ public class Zona {
     private String nombre;
     private String ciudadPrincipal;
 
-    public Region() {
+    public Zona() {
     }
     
     
