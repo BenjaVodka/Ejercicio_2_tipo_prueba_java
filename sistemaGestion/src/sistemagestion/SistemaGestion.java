@@ -185,7 +185,7 @@ public class SistemaGestion {
                     lectura = leer.next().toLowerCase();
 
                     if (!lectura.equals(zona1.getNombre().toLowerCase())) {
-                    System.out.println("Error: la región debe ser " + zona1.getNombre());
+                    System.out.println("Error: la zona debe ser " + zona1.getNombre());
                     }
 
                     } while (!lectura.equals(region1.getNombre().toLowerCase()));
