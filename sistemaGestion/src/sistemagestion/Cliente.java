@@ -33,7 +33,7 @@ public class Cliente {
     }
     
     public boolean comprobarEdad(int edad){
-     if (edad >= 18 && edad < 100){
+     if (edad >= 18 && edad < 80){
         return true;
     }else{
         System.out.println("Usted no cumple con la edad necesaria");
