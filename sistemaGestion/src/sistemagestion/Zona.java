@@ -21,7 +21,7 @@ public class Zona {
     
  
 
-    public Region(int nroUnico, String nombre, String ciudadPrincipal) {
+    public Zona(int nroUnico, String nombre, String ciudadPrincipal) {
         this.nroUnico = nroUnico;
         this.nombre = nombre;
         this.ciudadPrincipal = ciudadPrincipal;
