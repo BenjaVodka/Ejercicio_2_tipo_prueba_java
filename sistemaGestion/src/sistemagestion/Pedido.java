@@ -40,10 +40,10 @@ public class Pedido {
         double totalBruto = totalBruto(producto);
         double descuento = 0;
 
-        if (totalBruto > 100000) {
-            descuento = 0.20;
-    } else if (totalBruto > 50000) {
-            descuento = 0.10;
+        if (totalBruto > 120000) {
+            descuento = 0.25;
+    } else if (totalBruto > 60000) {
+            descuento = 0.15;
     }
 
     return totalBruto - (totalBruto * descuento);
