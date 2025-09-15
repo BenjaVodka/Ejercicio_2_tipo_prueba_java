@@ -47,7 +47,7 @@ public class SistemaGestion {
         
         //Region(int nroUnico, String nombre, String ciudadprincipal)
         
-        Region region1 = new Region(123,"Metropolitana","Pudahuel");
+        Zona zona1 = new Zona(123,"Metropolitana","Pudahuel");
         
         //Vendedor(String rut, int nroVendedor, String nombre, String fechaIngreso, String regionTrabaja
         
@@ -184,8 +184,8 @@ public class SistemaGestion {
                     System.out.println("Ingrese la zona en la que trabaja: ");
                     lectura = leer.next().toLowerCase();
 
-                    if (!lectura.equals(region1.getNombre().toLowerCase())) {
-                    System.out.println("Error: la región debe ser " + region1.getNombre());
+                    if (!lectura.equals(zona1.getNombre().toLowerCase())) {
+                    System.out.println("Error: la región debe ser " + zona1.getNombre());
                     }
 
                     } while (!lectura.equals(region1.getNombre().toLowerCase()));
