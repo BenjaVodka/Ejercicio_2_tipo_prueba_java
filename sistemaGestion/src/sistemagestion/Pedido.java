@@ -48,12 +48,36 @@ public class Pedido {
 
     return totalBruto - (totalBruto * descuento);
     }
+    
+    
+    public double totalConDescuentos(Producto producto, Cliente cliente) {
+    double bruto = totalBruto(producto);
+    double subtotal = bruto;
+
+    // Descuento por edad
+    if (cliente.getEdad() >= 65) {
+        subtotal = bruto * 0.5;
+    }
+
+    // Descuento por monto (después del descuento por edad)
+    double descuentoMonto = 0;
+    if (subtotal > 120000) {
+        descuentoMonto = 0.25;
+    } else if (subtotal > 60000) {
+        descuentoMonto = 0.15;
+    }
+
+    return subtotal - (subtotal * descuentoMonto);
+}
+
 
 
     public boolean validarPedido(Cliente cliente){
         
         return cliente.comprobarEdad(cliente.getEdad()) && cliente.comprobarNombre(cliente.getNombre());
     }
+    
+    
     
 
     

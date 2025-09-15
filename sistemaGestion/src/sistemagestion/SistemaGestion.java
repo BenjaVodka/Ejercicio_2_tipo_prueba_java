@@ -257,9 +257,21 @@ public class SistemaGestion {
 
                     boolean valido = pedido1.validarPedido(cliente1);
                     System.out.println("Pedido válido: " + valido);
+                    
+                    double neto = pedido1.totalConDescuentos(producto1, cliente1);
+                    System.out.println("Total Neto (con descuentos): " + neto);
+                    
+                    System.out.println("-------------------------------");
+                    System.out.println("Total Bruto: " + bruto);
+                    if (cliente1.getEdad() >= 65) {
+                    System.out.println("Se aplicó un 50% de descuento por edad.");
+                    }
+                    if (neto < bruto) {
+                    System.out.println("Se aplicaron descuentos por monto.");
+                    }
+                    System.out.println("Total Neto (con descuentos): " + neto);
+                    System.out.println("-------------------------------");
 
-                    double neto = pedido1.totalNeto(producto1);
-                    System.out.println("Total Neto (con descuento): " + neto);
                     break;
 
                     
