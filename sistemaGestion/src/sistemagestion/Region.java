@@ -8,7 +8,7 @@ package sistemagestion;
  *
  * @author benjamin
  */
-public class Region {
+public class Zona {
     
     
     private int nroUnico;
