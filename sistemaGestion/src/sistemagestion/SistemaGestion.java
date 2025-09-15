@@ -188,7 +188,7 @@ public class SistemaGestion {
                     System.out.println("Error: la zona debe ser " + zona1.getNombre());
                     }
 
-                    } while (!lectura.equals(region1.getNombre().toLowerCase()));
+                    } while (!lectura.equals(zona1.getNombre().toLowerCase()));
 
                     vendedor1.setRegionTrabaja(lectura);
                     System.out.println("Vendedor ingresado con éxito!");
@@ -209,13 +209,13 @@ public class SistemaGestion {
                     System.out.println("Ingrese el tipo (Maleta/Mochila/Bolso): ");
                     producto = leer.next().toLowerCase().trim();
 
-                    if (producto.equals("maleta") || producto.equals("mochila") || (producto.equals("bolso") {
+                    if (producto.equals("maleta") || producto.equals("mochila") || producto.equals("bolso")) {
                     System.out.println("Producto válido!");
                     } else {
                     System.out.println("Debes ingresar un producto válido: (Maleta/Mochila/Bolso)");
                     }
 
-                    } while (!(producto.equals("maleta") || producto.equals("mochila") || (producto.equals("bolso"));
+                    } while (!producto.equals("maleta") || producto.equals("mochila") || producto.equals("bolso"));
 
                     producto1.setTipo(producto);
                     System.out.println("Producto registrado con éxito!");
