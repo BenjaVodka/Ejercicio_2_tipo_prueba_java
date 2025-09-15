@@ -47,7 +47,7 @@ public class Pedido {
     }
 
     return totalBruto - (totalBruto * descuento);
-}
+    }
 
 
     public boolean validarPedido(Cliente cliente){
