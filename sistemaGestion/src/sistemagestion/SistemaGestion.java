@@ -181,7 +181,7 @@ public class SistemaGestion {
         
                     
                    do {
-                    System.out.println("Ingrese la región en la que trabaja: ");
+                    System.out.println("Ingrese la zona en la que trabaja: ");
                     lectura = leer.next().toLowerCase();
 
                     if (!lectura.equals(region1.getNombre().toLowerCase())) {
