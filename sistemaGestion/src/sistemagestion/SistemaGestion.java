@@ -225,6 +225,12 @@ public class SistemaGestion {
                     System.out.println("Ingrese el precio unitario: ");
                     precio = leer.nextDouble();
                     producto1.setPrecioUnitario(precio);
+
+                    //Lo dejo para resolver despues.
+                    //Si cliente tiene 65 años se aplica descuento del 50% al producto bruto.
+                    //Primero aplicar descuento por edad y luego descuento por valor total.
+
+                    
                     
                     System.out.println("Ingrese la cantidad: ");
                     numero = leer.nextInt();
