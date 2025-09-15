@@ -262,13 +262,10 @@ public class SistemaGestion {
                     System.out.println("Total Neto (con descuentos): " + neto);
                     
                     System.out.println("-------------------------------");
-                    System.out.println("Total Bruto: " + bruto);
                     if (cliente1.getEdad() >= 65) {
                     System.out.println("Se aplicó un 50% de descuento por edad.");
                     }
-                    System.out.println("Total Neto (con descuentos): " + neto);
-                    System.out.println("-------------------------------");
-
+          
                     break;
 
                     
