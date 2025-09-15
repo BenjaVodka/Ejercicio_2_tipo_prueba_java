@@ -27,7 +27,7 @@ public class SistemaGestion {
         int opcion;
         String producto;
         double precio;
-        LocalDate fechaMaxima = LocalDate.parse("2025-09-05");
+        LocalDate fechaMaxima = LocalDate.parse("2025-09-15");
         LocalDate fechaIngreso = null;
         boolean fechaValida = false;
       
