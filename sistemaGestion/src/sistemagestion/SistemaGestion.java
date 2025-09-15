@@ -266,9 +266,6 @@ public class SistemaGestion {
                     if (cliente1.getEdad() >= 65) {
                     System.out.println("Se aplicó un 50% de descuento por edad.");
                     }
-                    if (neto < bruto) {
-                    System.out.println("Se aplicaron descuentos por monto.");
-                    }
                     System.out.println("Total Neto (con descuentos): " + neto);
                     System.out.println("-------------------------------");
 
