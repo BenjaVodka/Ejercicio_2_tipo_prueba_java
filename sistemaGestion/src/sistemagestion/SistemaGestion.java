@@ -94,13 +94,18 @@ public class SistemaGestion {
                     cliente1.setNombre(lectura);
                     
                     do {
-                    System.out.println("Ingrese edad del cliente: ");
-                    numero = leer.nextInt();
-    
-                    if (!cliente1.comprobarEdad(numero)) {
-                    System.out.println("Edad inválida!");
-                    }
-}                   while (!cliente1.comprobarEdad(numero));
+                        System.out.println("Ingrese edad del cliente: ");
+                        try{
+                        numero = leer.nextInt();
+                        if (!cliente1.comprobarEdad(numero)) {
+                        System.out.println("Edad inválida!");
+                        }
+                        }catch (Exception e){
+                            System.out.println("Debe ingresar un numero!");
+                            leer.nextLine();
+                            numero = -1;    
+                        }            
+                    }while (!cliente1.comprobarEdad(numero));
                     
                     cliente1.setEdad(numero);
                     
@@ -139,12 +144,18 @@ public class SistemaGestion {
                     
                     
                     System.out.println("Ingrese número de vendedor: ");
-                    numero = leer.nextInt();
-                    vendedor1.setNroVendedor(numero);
                     
-                    
-                    
-                    
+                    try{
+                       numero = leer.nextInt();
+                       vendedor1.setNroVendedor(numero); 
+                    }catch(Exception e){
+                        System.out.println("Debe ingresar un numero!");
+                        leer.nextLine();
+                        vendedor1.setNroVendedor(0);
+                        
+                    }
+                                
+                                
                     do{
                         System.out.println("Ingrese nombre de vendedor: ");
                         lectura = leer.next();
@@ -228,8 +239,16 @@ public class SistemaGestion {
                     
                     
                     System.out.println("Ingrese el precio unitario: ");
-                    precio = leer.nextDouble();
-                    producto1.setPrecioUnitario(precio);
+                    
+                    try {
+                       precio = leer.nextDouble();
+                       producto1.setPrecioUnitario(precio); 
+                    }catch(Exception e){
+                        System.out.println("Debe ingresar un numero!");
+                        leer.nextLine();
+                        producto1.setPrecioUnitario(0.0);
+                    }
+                    
 
                     //Lo dejo para resolver despues.
                     //Si cliente tiene 65 años se aplica descuento del 50% al producto bruto.
@@ -238,10 +257,21 @@ public class SistemaGestion {
                     
                     
                     System.out.println("Ingrese la cantidad: ");
-                    numero = leer.nextInt();
                     
-                    pedido1.setCantidadSolicitada(numero);
+                    try{
+                       numero = leer.nextInt();
+                       pedido1.setCantidadSolicitada(numero);
+                       
+                    }catch(Exception e){
+                        System.out.println("Debe ingresar un numero!");
+                        leer.nextLine();
+                        pedido1.setCantidadSolicitada(0);
+                    }
+                    
+                    
                     pedido1.totalBruto(producto1);
+                    
+                    System.out.println("Pedido registrado con exito!");
                     
                     break;
                     
