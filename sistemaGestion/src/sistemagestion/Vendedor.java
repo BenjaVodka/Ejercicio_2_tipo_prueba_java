@@ -36,8 +36,8 @@ public class Vendedor {
             System.out.println("El nombre no debe estar vacio!");
             return false;
         }else{
-            
-        }return true;
+            return true;
+        }  
             
             
        

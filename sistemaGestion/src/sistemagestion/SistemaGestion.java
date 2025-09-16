@@ -103,7 +103,9 @@ public class SistemaGestion {
 }                   while (!cliente1.comprobarEdad(numero));
                     
                     cliente1.setEdad(numero);
-                   
+                    
+                    
+                    fechaValida = false;
                     do {
                         
                         
@@ -116,14 +118,15 @@ public class SistemaGestion {
                         cliente1.setFechaNacimiento(fecha);
                         System.out.println("Cliente registrado con éxito!");
                         fechaValida = true;
-                        // ahora el setter recibe un LocalDate
+                        
                         } catch (DateTimeParseException e) {
                         System.out.println("Formato de fecha incorrecto. Intente nuevamente.");
+                        fechaValida = false;
                         }
                     
                     
                     
-                    }while (fechaValida != true);
+                    }while (!fechaValida);
                     break;
                     
                    
@@ -156,7 +159,9 @@ public class SistemaGestion {
                     
                     vendedor1.setNombre(lectura);
                     
-                  do {
+                    
+                    
+                    do {
                      System.out.println("Ingrese fecha de ingreso (AAAA-MM-DD): ");
                      lectura = leer.next(); 
 
@@ -167,13 +172,13 @@ public class SistemaGestion {
                         if (fechaIngreso.isAfter(fechaMaxima)) {
                             System.out.println("Error: la fecha de ingreso no puede ser posterior a " + fechaMaxima);
                             fechaValida = false; // la fecha no es válida
-                            } else {
+                        } else {
                             fechaValida = true;  // fecha válida
                             }
-                            } catch (DateTimeParseException e) {
+                    } catch (DateTimeParseException e) {
                             System.out.println("Formato de fecha incorrecto. Intente nuevamente.");
                             fechaValida = false;
-                             }
+                    }
 
                      } while (!fechaValida);
 
