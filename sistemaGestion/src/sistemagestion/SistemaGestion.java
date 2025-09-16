@@ -309,8 +309,11 @@ public class SistemaGestion {
                     
                     System.out.println("-------------------------------");
                     if (cliente1.getEdad() >= 65) {
-                    System.out.println("Se aplicó un 50% de descuento por edad.");
+                    System.out.println("Se aplicó un 50% de descuento a "+cliente1.getNombre()+" por edad.");
+                    }else{
+                        System.out.println("Usted no obtiene descuento por edad :(");
                     }
+                    System.out.println("-------------------------------");
           
                     break;
 
