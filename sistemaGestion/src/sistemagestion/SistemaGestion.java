@@ -215,8 +215,7 @@ public class SistemaGestion {
                     System.out.println("Debes ingresar un producto válido: (Maleta/Mochila/Bolso)");
                     }
 
-                    } while (!producto.equals("maleta") && !producto.equals("mochila") && !producto.equals("bolso"));
-
+                    } while (!(producto.equals("maleta") || producto.equals("mochila") || producto.equals("bolso")));
                     producto1.setTipo(producto);
                     System.out.println("Producto registrado con éxito!");
 
