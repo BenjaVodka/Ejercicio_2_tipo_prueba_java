@@ -98,7 +98,7 @@ public class SistemaGestion {
                     numero = leer.nextInt();
     
                     if (!cliente1.comprobarEdad(numero)) {
-                    System.out.println("Edad inválida. Debe ser entre 18 y 79 años.");
+                    System.out.println("Edad inválida!");
                     }
 }                   while (!cliente1.comprobarEdad(numero));
                     
