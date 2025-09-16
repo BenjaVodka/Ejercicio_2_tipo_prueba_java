@@ -143,19 +143,22 @@ public class SistemaGestion {
                     vendedor1.setRut(lectura);
                     
                     
-                    System.out.println("Ingrese número de vendedor: ");
-                    
-                    try{
+                    boolean numeroValido = false;
+                    do{
+                        System.out.println("Ingrese número de vendedor: ");
+                      try{
                        numero = leer.nextInt();
-                       vendedor1.setNroVendedor(numero); 
+                       vendedor1.setNroVendedor(numero);
+                       numeroValido = true;
                     }catch(Exception e){
                         System.out.println("Debe ingresar un numero!");
                         leer.nextLine();
                         vendedor1.setNroVendedor(0);
-                        
+                        numeroValido = false;
                     }
-                                
-                                
+                    
+                    }while(!numeroValido);
+                    
                     do{
                         System.out.println("Ingrese nombre de vendedor: ");
                         lectura = leer.next();
@@ -236,37 +239,45 @@ public class SistemaGestion {
                     producto1.setTipo(producto);
                     System.out.println("Producto registrado con éxito!");
 
-                    
-                    
-                    System.out.println("Ingrese el precio unitario: ");
+                    boolean precioValido = false;
+                    do{
+                      System.out.println("Ingrese el precio unitario: ");
                     
                     try {
                        precio = leer.nextDouble();
                        producto1.setPrecioUnitario(precio); 
+                       precioValido = true;
                     }catch(Exception e){
                         System.out.println("Debe ingresar un numero!");
                         leer.nextLine();
                         producto1.setPrecioUnitario(0.0);
-                    }
+                        precioValido = false;
+                      }  
+                    }while(!precioValido);
+                    
                     
 
                     //Lo dejo para resolver despues.
                     //Si cliente tiene 65 años se aplica descuento del 50% al producto bruto.
                     //Primero aplicar descuento por edad y luego descuento por valor total.
 
-                    
-                    
-                    System.out.println("Ingrese la cantidad: ");
+                    boolean cantidadValida = false;
+                    do{
+                        System.out.println("Ingrese la cantidad: ");
                     
                     try{
                        numero = leer.nextInt();
                        pedido1.setCantidadSolicitada(numero);
+                       cantidadValida = true;
                        
                     }catch(Exception e){
                         System.out.println("Debe ingresar un numero!");
                         leer.nextLine();
                         pedido1.setCantidadSolicitada(0);
-                    }
+                        cantidadValida = false;
+                      }
+                    
+                    }while(!cantidadValida);
                     
                     
                     pedido1.totalBruto(producto1);
