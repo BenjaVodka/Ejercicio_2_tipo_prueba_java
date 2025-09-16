@@ -93,14 +93,14 @@ public class SistemaGestion {
                     
                     cliente1.setNombre(lectura);
                     
+                    do {
                     System.out.println("Ingrese edad del cliente: ");
                     numero = leer.nextInt();
-                    
-                    if (cliente1.comprobarEdad(numero)){
-                        
-                    }else{
-                        break;
+    
+                    if (!cliente1.comprobarEdad(numero)) {
+                    System.out.println("Edad inválida. Debe ser entre 18 y 79 años.");
                     }
+}                   while (!cliente1.comprobarEdad(numero));
                     
                     cliente1.setEdad(numero);
                    
@@ -140,10 +140,11 @@ public class SistemaGestion {
                     vendedor1.setNroVendedor(numero);
                     
                     
-                    System.out.println("Ingrese nombre de vendedor: ");
-                    lectura = leer.next();
+                    
                     
                     do{
+                        System.out.println("Ingrese nombre de vendedor: ");
+                        lectura = leer.next();
                         if(!vendedor1.comprobarNombre(lectura)){
                             System.out.println("El nombre no debe estar vacio!");
                             
